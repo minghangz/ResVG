@@ -101,7 +101,7 @@ class DecoderWithExtraEncoder(nn.Module):
         self.return_intermediate = return_intermediate
         self.vis_query_embed = nn.Embedding(num_queries, query_dim)
         self.text_query_embed = nn.Embedding(num_queries, query_dim)
-        self.mlp = self.ffn = nn.Sequential(nn.Linear(512, 512),
+        self.ffn = nn.Sequential(nn.Linear(512, 512),
                                  nn.ReLU(inplace=True),
                                  nn.Dropout(0.1),
                                  nn.Linear(512, 256))
@@ -126,7 +126,7 @@ class DecoderWithExtraEncoder(nn.Module):
 
         # Initial target query
         vis_query = torch.zeros_like(vis_query_embed)
-        img_fea = self.mlp(feature)
+        img_fea = self.ffn(feature)
         vis_query = vis_query + img_fea
         # Multi-stage decoder
         for idx, layer in enumerate(self.layers):

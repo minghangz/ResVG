@@ -316,11 +316,11 @@ def main(args):
                 if val_acc['Acc@0.50'] > best_acc:
                     checkpoint_paths.append(output_dir / 'checkpoint_best_acc.pth')
                     best_acc = val_acc['Acc@0.50']
-            '''if (epoch + 1) % args.lr_drop == 0 or (epoch + 1) % args.checkpoint_step == 0:
+            if (epoch + 1) % args.lr_drop == 0 or (epoch + 1) % args.checkpoint_step == 0:
                 if args.checkpoint_latest:
                     checkpoint_paths.append(output_dir / 'checkpoint_latest.pth')
                 else:
-                    checkpoint_paths.append(output_dir / f'checkpoint{epoch+1:04}.pth')'''
+                    checkpoint_paths.append(output_dir / f'checkpoint{epoch+1:04}.pth')
 
             for checkpoint_path in checkpoint_paths:
                 if checkpoint_path.name == 'checkpoint.pth':

@@ -6,7 +6,7 @@ def build_dataset(test, args):
         return VGDataset(data_root=args.data_root,
                          split_root=args.split_root,
                          dataset=args.dataset,
-                         split='val',
+                         split=args.test_split,
                          test=True,
                          transforms=args.test_transforms,
                          max_query_len=args.max_query_len,

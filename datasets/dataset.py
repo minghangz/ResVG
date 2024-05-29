@@ -77,6 +77,8 @@ class VGDataset(Dataset):
             self.dataset_root = osp.join(self.data_root, 'other')
             self.im_dir = osp.join(self.dataset_root, 'images', 'mscoco', 'images', 'train2014')
         self.im_dir = '/network_space/storage43/ln_data/images/train2014/'
+        #/network_space/storage43/ln_data/flickr/flickr
+        #/network_space/storage43/ln_data/referit/ReferIt
         dataset_split_root = osp.join(self.split_root, self.dataset)
         valid_splits = SUPPORTED_DATASETS[self.dataset]['splits']
 
@@ -94,7 +96,7 @@ class VGDataset(Dataset):
         for split in splits:
             imgset_file = '{0}_{1}.pth'.format(self.dataset, split)
             imgset_path = osp.join(dataset_split_root, imgset_file)
-            self.imgset_info += torch.load(imgset_path, map_location="cpu")[:1000]
+            self.imgset_info += torch.load(imgset_path, map_location="cpu")
             fea_file = '{0}_fea.pth'.format(split)
             fea_path = osp.join(dataset_split_root, fea_file)
             self.fea = torch.load(fea_path).float()
