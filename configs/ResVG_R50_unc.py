@@ -2,7 +2,7 @@ dataset='unc'
 
 output_dir='work_dirs/ResVG_R50_unc/'
 
-batch_size=32
+batch_size=16
 epochs=90
 lr_drop=60
 freeze_epochs=10
