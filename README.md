@@ -31,7 +31,7 @@ You can download the images from the original source and place them in `./data/i
 /network_space/storage43/ln_data/flickr/flickr
 ```
 
-The training samples can be download from [data](). Finally, the `./data/` and `./image_data/` folder will have the following structure:
+The training samples can be download from [data](https://disk.pku.edu.cn/link/AA5D235D7379B8474798A8F2D608AD68A3). Finally, the `./data/` folder will have the following structure:
 
 ```
 
