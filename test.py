@@ -186,7 +186,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser('VLTVG test script', parents=[get_args_parser()])
+    parser = argparse.ArgumentParser('ResVG test script', parents=[get_args_parser()])
     args = parser.parse_args()
     if args.config:
         cfg = Config(args.config)

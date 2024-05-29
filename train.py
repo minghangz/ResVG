@@ -365,7 +365,7 @@ def main(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser('VLTVG training script', parents=[get_args_parser()])
+    parser = argparse.ArgumentParser('ResVG training script', parents=[get_args_parser()])
     args = parser.parse_args()
     if args.config:
         cfg = Config(args.config)
