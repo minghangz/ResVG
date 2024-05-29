@@ -14,7 +14,6 @@ This repository is the official Pytorch implementation for paper **ResVG: Enhanc
 ### Dependencies
 - Python 3.9.10
 - PyTorch 1.9.0 + cu111 + cp39
-- [Pytorch-Bert 0.6.2](https://pypi.org/project/pytorch-pretrained-bert/)
 - Check [requirements.txt](requirements.txt) for other dependencies. 
 
 ### Data Preparation
