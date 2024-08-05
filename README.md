@@ -2,6 +2,10 @@
 
 This repository is the official Pytorch implementation for paper **ResVG: Enhancing Relation and Semantic Understanding in Multiple Instances for Visual Grounding**.
 
+In this paper, we propose a novel approach, the **Re**lation and **S**emantic-sensitive **V**isual **G**rounding (ReSVG) model, to improve the model's understanding of relation and semantic in multiple instances. Firstly, we enhance the model's understanding of fine-grained semantics by injecting semantic prior information derived from text queries into the model. This is achieved by leveraging text-to-image generation models to produce images representing the semantic attributes of target objects described in queries. Secondly, we tackle the lack of training samples with multiple distractions by introducing a relation-sensitive data augmentation method. This method generates additional training data by synthesizing images containing multiple objects of the same category and pseudo queries based on their spatial relationships. The proposed ReSVG model significantly improves the model's ability to comprehend both object semantics and spatial relations, leading to enhanced performance in visual grounding tasks, particularly in scenarios with multiple-instance distractions.
+
+Our paper was accepted by ACM-MM 2024.
+
 ![](figure.png)
 
 ## Contents
@@ -19,24 +23,12 @@ This repository is the official Pytorch implementation for paper **ResVG: Enhanc
 - Check [requirements.txt](requirements.txt) for other dependencies. 
 
 ### Data Preparation
-You can download the images from the original source and place them in `./data/image_data` folder:
-- RefCOCO
-```
-/network_space/storage43/ln_data/images/train2014
-```
--ReferItGame
-```
-/network_space/storage43/ln_data/referit/ReferIt
-```
--Flickr30K Entities
-```
-/network_space/storage43/ln_data/flickr/flickr
-```
+
+You can download the images follow [TransVG](https://github.com/djiajunustc/TransVG/blob/main/docs/GETTING_STARTED.md) and place them in ./ln_data folder:
 
 The training samples can be download from [data](https://disk.pku.edu.cn/link/AA5D235D7379B8474798A8F2D608AD68A3). Finally, the `./data/` folder will have the following structure:
 
 ```
-
 |-- data
       |-- flickr
       |-- gref
