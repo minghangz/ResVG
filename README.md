@@ -2,6 +2,8 @@
 
 This repository is the official Pytorch implementation for paper **ResVG: Enhancing Relation and Semantic Understanding in Multiple Instances for Visual Grounding**.
 
+![](figure.png)
+
 ## Contents
 
 1. [Usage](#usage)
