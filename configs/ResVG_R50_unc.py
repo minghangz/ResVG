@@ -7,7 +7,7 @@ epochs=90
 lr_drop=60
 freeze_epochs=10
 freeze_modules=['backbone', 'input_proj', 'trans_encoder', 'bert']
-load_weights_path='/home/zhangjiahua/Code/TransVG/checkpoints/detr-r50-unc.pth'
+load_weights_path='pretrained_checkpoints/detr-r50-unc.pth'
 
 model_config = dict(
     decoder=dict(

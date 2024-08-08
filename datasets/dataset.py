@@ -26,7 +26,7 @@ SUPPORTED_DATASETS = {
         'params': {'dataset': 'refcoco', 'split_by': 'unc'}
     },
     'unc+': {
-        'splits': ('train', 'val', 'trainval', 'testA', 'testB', 'new_train'),
+        'splits': ('train', 'val', 'trainval', 'testA', 'testB', 'new_train', 'gligen_train'),
         'params': {'dataset': 'refcoco+', 'split_by': 'unc'}
     },
     'gref': {
@@ -69,14 +69,16 @@ class VGDataset(Dataset):
         # setting datasource
         if self.dataset == 'referit':
             self.dataset_root = osp.join(self.data_root, 'referit')
-            self.im_dir = osp.join(self.dataset_root, 'images')
+            # self.im_dir = osp.join(self.dataset_root, 'images')
+            self.im_dir = './ln_data/referit/ReferIt'
         elif self.dataset == 'flickr':
             self.dataset_root = osp.join(self.data_root, 'Flickr30k')
-            self.im_dir = osp.join(self.dataset_root, 'flickr30k-images')
+            # self.im_dir = osp.join(self.dataset_root, 'flickr30k-images')
+            self.im_dir = './ln_data/flickr/flickr'
         else:  # refer coco etc.
             self.dataset_root = osp.join(self.data_root, 'other')
-            self.im_dir = osp.join(self.dataset_root, 'images', 'mscoco', 'images', 'train2014')
-        self.im_dir = '/network_space/storage43/ln_data/images/train2014/'
+            # self.im_dir = osp.join(self.dataset_root, 'images', 'mscoco', 'images', 'train2014')
+            self.im_dir = './ln_data/images/train2014/'
         #/network_space/storage43/ln_data/flickr/flickr
         #/network_space/storage43/ln_data/referit/ReferIt
         dataset_split_root = osp.join(self.split_root, self.dataset)

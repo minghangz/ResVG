@@ -42,8 +42,8 @@ The training samples can be download from [data](https://disk.pku.edu.cn/link/AA
 1.You can download the DETR checkpoints from [detr_checkpoints](https://disk.pku.edu.cn:443/link/4E6B5343270CC07E52A88AA8A7A31CE8). These checkpoints should be downloaded and move to the checkpoints directory.
 
 ```
-mkdir checkpoints
-mv detr_checkpoints.tar.gz ./checkpoints/
+mkdir pretrained_checkpoints
+mv detr_checkpoints.tar.gz ./pretrained_checkpoints/
 tar -zxvf detr_checkpoints.tar.gz
 ```
 
@@ -51,12 +51,12 @@ tar -zxvf detr_checkpoints.tar.gz
 
 1.  Training on RefCOCO. 
     ```
-    CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 --use_env train.py --config configs/ResVG_R50_unc+.py
+    CUDA_VISIBLE_DEVICES=0,1,2,3 python -m torch.distributed.launch --nproc_per_node=4 --use_env train.py --config configs/ResVG_R50_unc.py --test_split val
     ```
 
 2.  Evaluation on RefCOCO.
     ```
-    python -m torch.distributed.launch --nproc_per_node=4 --use_env test.py --config configs/ResVG_R50_unc.py --checkpoint ResVG_R50_unc.pth --batch_size_test 32 --test_split val;
+    python -m torch.distributed.launch --nproc_per_node=4 --use_env test.py --config configs/ResVG_R50_unc.py --checkpoint ResVG_R50_unc.pth --batch_size_test 32 --test_split testA;
     ```
 
 ## Results

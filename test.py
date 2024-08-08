@@ -95,8 +95,8 @@ def get_args_parser():
     parser.add_argument('--other_loss_coefs', default={}, type=float)
 
     # dataset parameters
-    parser.add_argument('--data_root', default='/home/zhangjiahua/Code/Pseudo-Q/data/data')
-    parser.add_argument('--split_root', default='/home/zhangjiahua/Code/Pseudo-Q/data/data')
+    parser.add_argument('--data_root', default='./data')
+    parser.add_argument('--split_root', default='./data')
     parser.add_argument('--dataset', default='gref')
     parser.add_argument('--test_split', default='val')
     parser.add_argument('--img_size', default=640)
@@ -176,12 +176,14 @@ def main(args):
     assert args.checkpoint
     checkpoint = torch.load(args.checkpoint, map_location='cpu')
     model_without_ddp.load_state_dict(checkpoint['model'])
+    logger.info('Total Params: %d'%sum([p.numel() for p in model_without_ddp.parameters() if p.requires_grad]))
 
     test_stats, test_acc, test_time = evaluate(
         model, criterion, postprocessor, data_loader_test, device, args.save_pred_path
     )
     logger.info('  '.join(['[Test accuracy]', *[f'{k}: {v:.4f}' for k, v in test_acc.items()]]))
     logger.info('  '.join(['[Test time]', *[f'{k}: {v:.6f}' for k, v in test_time.items()]]))
+    logger.info('Max Mem: %.2f'%(torch.cuda.max_memory_allocated()/1024/1024))
     return
 
 

@@ -97,7 +97,7 @@ def get_args_parser():
 
     # dataset parameters
     parser.add_argument('--data_root', default='./data/')
-    parser.add_argument('--split_root', default='/home/zhangjiahua/Code/Pseudo-Q/data/data/')
+    parser.add_argument('--split_root', default='./data/')
     parser.add_argument('--dataset', default='unc')
     parser.add_argument('--test_split', default='test')
     parser.add_argument('--img_size', default=640)
@@ -339,8 +339,8 @@ def main(args):
                 else:
                     utils.save_on_master({
                         'model': model_without_ddp.state_dict(),
-                        'optimizer': optimizer.state_dict(),
-                        'lr_scheduler': lr_scheduler.state_dict(),
+                        # 'optimizer': optimizer.state_dict(),
+                        # 'lr_scheduler': lr_scheduler.state_dict(),
                         'epoch': epoch,
                         'args': args,
                     }, checkpoint_path)
