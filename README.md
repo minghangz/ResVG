@@ -4,7 +4,9 @@ This repository is the official Pytorch implementation for paper **ResVG: Enhanc
 
 In this paper, we propose a novel approach, the **Re**lation and **S**emantic-sensitive **V**isual **G**rounding (ReSVG) model, to improve the model's understanding of relation and semantic in multiple instances. Firstly, we enhance the model's understanding of fine-grained semantics by injecting semantic prior information derived from text queries into the model. This is achieved by leveraging text-to-image generation models to produce images representing the semantic attributes of target objects described in queries. Secondly, we tackle the lack of training samples with multiple distractions by introducing a relation-sensitive data augmentation method. This method generates additional training data by synthesizing images containing multiple objects of the same category and pseudo queries based on their spatial relationships. The proposed ReSVG model significantly improves the model's ability to comprehend both object semantics and spatial relations, leading to enhanced performance in visual grounding tasks, particularly in scenarios with multiple-instance distractions.
 
-Our paper was accepted by ACM-MM 2024.
+Our paper was accepted by ACM-MM 2024. 
+
+[[Paper](https://arxiv.org/pdf/2408.16314)] [[Project Page](https://minghangz.github.io/publication/resvg/)]
 
 ![](figure.png)
 
