@@ -6,7 +6,7 @@ In this paper, we propose a novel approach, the **Re**lation and **S**emantic-se
 
 Our paper was accepted by ACM-MM 2024. 
 
-[[Paper](https://arxiv.org/pdf/2408.16314)] [[Project Page](https://minghangz.github.io/publication/resvg/)]
+[[Paper](https://arxiv.org/pdf/2408.16314)] [[Project Page](https://minghangz.github.io/publication/resvg/)] [[Video](https://www.youtube.com/watch?v=Mtxkklph16o)]
 
 ![](figure.png)
 
