@@ -28,7 +28,7 @@ Our paper was accepted by ACM-MM 2024.
 
 You can download the images follow [TransVG](https://github.com/djiajunustc/TransVG/blob/main/docs/GETTING_STARTED.md) and place them in ./ln_data folder:
 
-The training samples can be download from [data](https://disk.pku.edu.cn/link/AA5D235D7379B8474798A8F2D608AD68A3). Finally, the `./data/` folder will have the following structure:
+The training samples can be download from [data](https://disk.pku.edu.cn/link/AA6D7224C7C18142BE9F5F6EAFC17813F3). Finally, the `./data/` folder will have the following structure:
 
 ```
 |-- data
